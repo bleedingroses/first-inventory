@@ -82,7 +82,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
     Route::get('/setup', function () {
-        Artisan::call('migrate', ['--force' => true]);
+        Artisan::call('migrate:fresh', ['--force' => true]);
         Artisan::call('db:seed', ['--force' => true]);
         return 'Setup selesai';
     });
