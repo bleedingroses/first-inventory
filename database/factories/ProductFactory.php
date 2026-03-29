@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Models\Unit;
 use App\Models\Category;
+use App\Models\Product;
+use App\Models\Unit;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,7 +17,10 @@ class ProductFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+
+        protected $model = Product::class;
+    
+        public function definition(): array
     {
         $categories = Category::pluck('id')->toArray();
         $units = Unit::pluck('id')->toArray();
