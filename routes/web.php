@@ -79,9 +79,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('finance-categories', [\App\Http\Controllers\Api\FinanceCategoryController::class, 'search'])->name('finance-categories.search');
     });
 
-    Route::get('/seed', function () {
+    Route::get('/setup', function () {
+        Artisan::call('migrate', ['--force' => true]);
         Artisan::call('db:seed', ['--force' => true]);
-        return 'Seeder berhasil dijalankan';
+        return 'Setup selesai';
     });
 });
 
