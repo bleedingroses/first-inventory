@@ -17,8 +17,8 @@ class UnitFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->unique()->word(),
-            'symbol' => fake()->unique()->lexify('??'),
+            'name' => $this->faker()->unique()->word(),
+            'symbol' => $this->faker()->unique()->lexify('??'),
         ];
     }
 }
