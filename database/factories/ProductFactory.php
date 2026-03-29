@@ -22,18 +22,18 @@ class ProductFactory extends Factory
         $units = Unit::pluck('id')->toArray();
 
         return [
-            'category_id' => !empty($categories) ? $this->faker()->randomElement($categories) : Category::factory(),
-            'unit_id' => !empty($units) ? $this->faker()->randomElement($units) : Unit::factory(),
-            'sku' => 'P.' . date('ymd') . '.' . strtoupper($this->faker()->unique()->lexify('????')),
-            'name' => $this->faker()->words(3, true),
-            'description' => $this->faker()->sentence(),
-            'purchase_price' => $this->faker()->numberBetween(10000, 500000),
-            'selling_price' => $this->faker()->numberBetween(550000, 1000000),
-            'quantity' => $this->faker()->numberBetween(0, 100),
-            'min_stock' => $this->faker()->numberBetween(5, 20),
-            'is_active' => $this->faker()->boolean(90),
-            'created_at' => $this->faker()->dateTimeBetween('-1 year', 'now'),
-            'updated_at' => $this->faker()->dateTimeBetween('-1 year', 'now'),
+            'category_id' => !empty($categories) ? $this->faker->randomElement($categories) : Category::factory(),
+            'unit_id' => !empty($units) ? $this->faker->randomElement($units) : Unit::factory(),
+            'sku' => 'P.' . date('ymd') . '.' . strtoupper($this->faker->unique()->lexify('????')),
+            'name' => $this->faker->words(3, true),
+            'description' => $this->faker->sentence(),
+            'purchase_price' => $this->faker->numberBetween(10000, 500000),
+            'selling_price' => $this->faker->numberBetween(550000, 1000000),
+            'quantity' => $this->faker->numberBetween(0, 100),
+            'min_stock' => $this->faker->numberBetween(5, 20),
+            'is_active' => $this->faker->boolean(90),
+            'created_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
+            'updated_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
         ];
     }
 }
